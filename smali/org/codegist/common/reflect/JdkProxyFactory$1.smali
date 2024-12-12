@@ -1,0 +1,14 @@
+.class synthetic Lorg/codegist/common/reflect/JdkProxyFactory$1;
+.super Ljava/lang/Object;
+.source "JdkProxyFactory.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/codegist/common/reflect/JdkProxyFactory;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1008
+    name = null
+.end annotation

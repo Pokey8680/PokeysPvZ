@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="OBBLayout" />
+    <item type="id" name="splashView" />
+    <item type="id" name="progressView" />
+    <item type="id" name="downloaderDashboard" />
+    <item type="id" name="bottomView" />
+    <item type="id" name="statusText" />
+    <item type="id" name="progressBar" />
+    <item type="id" name="progressText" />
+    <item type="id" name="pauseButton" />
+    <item type="id" name="messageView" />
+    <item type="id" name="messageText" />
+    <item type="id" name="okButton" />
+    <item type="id" name="cancelButton" />
+    <item type="id" name="notificationLayout" />
+    <item type="id" name="appIcon" />
+    <item type="id" name="progress_text" />
+    <item type="id" name="title" />
+    <item type="id" name="time_remaining" />
+    <item type="id" name="progress_bar_frame" />
+    <item type="id" name="progress_bar" />
+    <item type="id" name="description" />
+    <item type="id" name="chillingo_scrollView" />
+    <item type="id" name="chillingo_mainLayout" />
+    <item type="id" name="chillingo_introTitleView" />
+    <item type="id" name="chillingo_introTextView" />
+    <item type="id" name="chillingo_ageLabelTextView" />
+    <item type="id" name="chillingo_ageEditText" />
+    <item type="id" name="chillingo_iAcceptLabel" />
+    <item type="id" name="chillingo_declineButton" />
+    <item type="id" name="chillingo_acceptButton" />
+    <item type="id" name="chillingo_privacyButton" />
+    <item type="id" name="chillingo_termsButton" />
+    <item type="id" name="chillingo_eulaButton" />
+</resources>

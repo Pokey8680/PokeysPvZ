@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@id/OBBLayout"
+    android:background="#ff000000"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@id/splashView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/downloadsplashrow"
+        android:scaleType="centerInside"
+        android:layout_weight="1.0" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/progressView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.0">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@id/downloaderDashboard"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0">
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@id/bottomView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0">
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"
+                    android:id="@id/statusText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.0" />
+                <ProgressBar
+                    android:id="@id/progressBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_weight="1.0"
+                    style="?android:progressBarStyleHorizontal" />
+                <TextView
+                    android:gravity="center_horizontal"
+                    android:id="@id/progressText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    style="@android:style/TextAppearance.Small" />
+            </LinearLayout>
+            <Button
+                android:layout_gravity="center_vertical"
+                android:id="@id/pauseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:minWidth="94.0dip"
+                android:minHeight="40.0dip"
+                android:text="@string/downloader_Pause"
+                android:layout_weight="0.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/messageView"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.0">
+        <TextView
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:id="@id/messageText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0" />
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_gravity="center_vertical"
+                android:id="@id/okButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:minWidth="94.0dip"
+                android:minHeight="40.0dip"
+                android:text="@string/downloader_Retry"
+                android:layout_weight="0.0" />
+            <Button
+                android:layout_gravity="center_vertical"
+                android:id="@id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:minWidth="94.0dip"
+                android:minHeight="40.0dip"
+                android:text="@string/downloader_Quit"
+                android:layout_weight="0.0" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

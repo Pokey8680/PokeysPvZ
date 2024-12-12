@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components>
+    <Tracking>com.ea.nimble.tracking.Tracking</Tracking>
+    <Base>com.ea.nimble.Base</Base>
+    <TrackingSynergy>com.ea.nimble.tracking.TrackingSynergy</TrackingSynergy>
+    <TrackingS2S>com.ea.nimble.tracking.TrackingS2S</TrackingS2S>
+    <TrackingEventWrangler>com.ea.nimble.tracking.TrackingEventWrangler</TrackingEventWrangler>
+    <InAppMessage>com.ea.nimble.inappmessage.InAppMessage</InAppMessage>
+    <PushNotification>com.ea.nimble.pushnotificationgoogle.PushNotification</PushNotification>
+    <GooglePlay>com.ea.nimble.mtx.googleplay.GooglePlay</GooglePlay>
+    <CrashReporter>com.ea.nimble.crashreporter.CrashTrapper</CrashReporter>
+    <Identity>com.ea.nimble.identity.NimbleIdentityImpl</Identity>
+    <IdentityAnonymous>com.ea.nimble.identity.AuthenticatorAnonymous</IdentityAnonymous>
+    <FriendsService>com.ea.nimble.friends.NimbleFriendsImpl</FriendsService>
+    <IdentityGooglePlus>com.ea.nimble.identity.AuthenticatorGooglePlus</IdentityGooglePlus>
+    <XPromo>com.ea.rs.xpromo.XPromo</XPromo>
+</components>
