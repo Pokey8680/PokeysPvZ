@@ -34,6 +34,8 @@ When EA acquired PopCap, they pushed changes that were not well received by fans
   - The game is capped at 30fps, making it not as smooth as the PC or console versions, which play at 60+ fps.
 - Zombies On Your Lawn 
   - *Zombies On Your Lawn* does not play after you beat Dr. Zomboss.
+- Imitater 
+  - Plants made by the Imitater do not become gray
 
 
 ## Legal Disclaimer
