@@ -27,6 +27,11 @@ When EA acquired PopCap, they pushed changes that were not well received by fans
 - Place the obb file under `Android/obb/com.pokey8680.pvz`
   - If the folder isn't there, you can create it.
 
+# To Be Fixed
+- Horde music 
+  - The horde music doesn't play.
+- FPS Cap
+  - The game is capped at 30fps, making it not as smooth as the PC or console versions, which play at 60+ fps.
 
 ## Legal Disclaimer
 
