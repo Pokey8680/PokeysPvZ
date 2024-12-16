@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    android:installLocation="auto"
-    package="com.popcap.pvz_row"
-    platformBuildVersionCode="22"
-    platformBuildVersionName="5.1.1-1819727"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pokey8680.pvz">
+    
     <application
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-        android:label="@string/app_name"
-        android:icon="@string/icon_name"
-        android:debuggable="false"
-        android:requiredAccountType="com.google">
+        android:label="Pokey's PvZ"
+        android:icon="@mipmap/ic_launcher">
+
+        <!-- Required meta-data -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <!-- Main Activities -->
         <activity
+            android:name="com.popcap.pvz_row.PvZActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:name=".PvZActivity"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
             android:configChanges="keyboard|keyboardHidden|layoutDirection|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
             android:alwaysRetainTaskState="true">
             <intent-filter>
-                <action
-                    android:name="android.intent.action.PVZ_F2P" />
-                <category
-                    android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.PVZ_F2P" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action
-                    android:name="android.intent.action.SEARCH" />
-                <category
-                    android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".ObbActivity"
+            android:name="com.popcap.pvz_row.ObbActivity"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
             android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode">
             <intent-filter>
-                <action
-                    android:name="android.intent.action.OBBActivity" />
-                <category
-                    android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.OBBActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".COPPAActivity"
+            android:name="com.popcap.pvz_row.COPPAActivity"
             android:launchMode="singleTop"
             android:screenOrientation="landscape"
             android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode">
             <intent-filter>
-                <action
-                    android:name="android.intent.action.MAIN" />
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Ad and Terms Activities -->
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
         <activity
             android:theme="@style/termstheme"
             android:name="com.chillingo.libterms.ui.TermsActivity"
@@ -65,18 +65,48 @@
             android:screenOrientation="landscape"
             android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
         <activity
-            android:theme="@android:style/Theme.Translucent"
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
-        <activity
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:name="com.inmobi.androidsdk.IMBrowserActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize"
             android:hardwareAccelerated="true" />
-        <activity
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="com.millennialmedia.android.MMActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation" />
+
+        <!-- Background Services -->
+        <service android:name="com.ea.easp.mtx.market.android.AndroidBillingService" />
+        <service android:name="com.popcap.pvz_row.PvZDownloaderService" />
+        <service android:name="com.ea.nimble.pushnotificationgoogle.GCMIntentService" />
+        <service
+            android:name="com.vungle.publisher.VungleService"
+            android:exported="false" />
+
+        <!-- Receivers -->
+        <receiver
+            android:name="com.ea.easp.mtx.market.android.BillingReceiver">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.IN_APP_NOTIFY" />
+                <action android:name="com.android.vending.billing.RESPONSE_CODE" />
+                <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.ea.nimble.tracking.ReferrerReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.ea.nimble.pushnotificationgoogle.NimbleBroadcastReceiver"
+            android:exported="false">
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.popcap.pvz_row" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Metadata -->
         <meta-data
             android:name="ServerType"
             android:value="live" />
@@ -86,137 +116,27 @@
         <meta-data
             android:name="com.ea.nimble.mtx.enableVerification"
             android:value="@string/nimble_mtx_enableVerification" />
-        <service
-            android:name="com.ea.easp.mtx.market.android.AndroidBillingService" />
-        <receiver
-            android:name="com.ea.easp.mtx.market.android.BillingReceiver">
-            <intent-filter>
-                <action
-                    android:name="com.android.vending.billing.IN_APP_NOTIFY" />
-                <action
-                    android:name="com.android.vending.billing.RESPONSE_CODE" />
-                <action
-                    android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name="com.ea.nimble.pushnotificationgoogle.NimbleBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action
-                    android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <action
-                    android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category
-                    android:name="com.popcap.pvz_row" />
-            </intent-filter>
-        </receiver>
-        <service
-            android:name="com.ea.nimble.pushnotificationgoogle.GCMIntentService" />
-        <receiver
-            android:name="com.ea.nimble.tracking.ReferrerReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action
-                    android:name="com.android.vending.INSTALL_REFERRER" />
-            </intent-filter>
-        </receiver>
-        <service
-            android:name="com.popcap.pvz_row.PvZDownloaderService" />
-        <receiver
-            android:name="com.popcap.pvz_row.PvZAlarmReceiver" />
-        <activity
-            android:name="com.admofi.sdk.lib.and.AdmofiActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
-        <activity
-            android:name="com.admofi.sdk.lib.and.richmedia.MraidVideoPlayerActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
-        <activity
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:name="com.vungle.publisher.FullScreenAdActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-            android:name="com.jirbo.adcolony.AdColonyOverlay"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:name="com.jirbo.adcolony.AdColonyFullscreen"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:name="com.jirbo.adcolony.AdColonyBrowser"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:name="com.chartboost.sdk.CBImpressionActivity"
-            android:excludeFromRecents="true" />
-        <activity
-            android:name="com.tapjoy.TJCOffersWebView"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:name="com.tapjoy.TapjoyFullScreenAdWebView"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:name="com.tapjoy.TapjoyVideoView"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-            android:name="com.tapjoy.com.tapjoy.TJAdUnitView"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:hardwareAccelerated="true" />
-        <activity
-            android:name="com.tapjoy.mraid.view.ActionHandler"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:name="com.tapjoy.mraid.view.Browser"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <service
-            android:name="com.vungle.publisher.VungleService"
-            android:exported="false" />
     </application>
-    <!-- Allows the app to get the list of accounts known by the phone. This may include any accounts created by applications that you have installed. -->
-    <uses-permission
-        android:name="android.permission.GET_ACCOUNTS" />
-    <!-- Allows the app to create network sockets and use customised network protocols. The browser and other applications provide means to send data to the Internet, so this permission is not required to send data to the Internet. -->
-    <uses-permission
-        android:name="android.permission.INTERNET" />
-    <!-- Allows the app to control the vibrator. -->
-    <uses-permission
-        android:name="android.permission.VIBRATE" />
-    <!-- Allows the app to prevent the phone from going to sleep. -->
-    <uses-permission
-        android:name="android.permission.WAKE_LOCK" />
-    <!-- Allows the app to write the contents of your shared storage. -->
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- Allows the app to view information about network connections such as which networks exist and are connected. -->
-    <uses-permission
-        android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- Allows the app to view information about Wi-Fi networking, such as whether Wi-Fi is enabled and name of connected Wi-Fi devices. -->
-    <uses-permission
-        android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission
-        android:name="android.permission.USE_CREDENTIALS" />
-    <!-- Can check if you have a license for this app from Google Play. -->
-    <uses-permission
-        android:name="com.android.vending.CHECK_LICENSE" />
-    <!-- Allows the user to purchase items through Google Play from within this app. -->
-    <uses-permission
-        android:name="com.android.vending.BILLING" />
-    <!-- Allows the app to get the list of accounts known by the phone. This may include any accounts created by applications that you have installed. -->
-    <uses-permission
-        android:name="android.permission.GET_ACCOUNTS" />
-    <!-- Allows apps to accept cloud-to-device messages sent by the app's service. Using this service will incur data usage. Malicious apps could cause excess data usage. -->
-    <uses-permission
-        android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <permission
-        android:name="com.popcap.pvz_row.permission.C2D_MESSAGE"
+        android:name="com.pokey8680.pvz.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-configuration
-        android:reqTouchScreen="finger" />
-    <uses-feature
-        android:glEsVersion="0x20000" />
+
+    <!-- Compatibility -->
+    <uses-feature android:glEsVersion="0x20000" />
+    <uses-configuration android:reqTouchScreen="finger" />
     <supports-screens
         android:anyDensity="true"
         android:smallScreens="true"
