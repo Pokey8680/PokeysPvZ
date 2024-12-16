@@ -1,5 +1,8 @@
 # Pokey's PvZ
 
+![ic_launcher](https://github.com/user-attachments/assets/9b79cdcd-f840-47b2-b05a-b1c553425fe2)
+
+
 A mod for Plants vs. Zombies 1 that restores the original experience by removing ads and reverting EA's intrusive changes. Relive the glory of PopCap's original masterpiece without the distractions and limitations introduced in later versions.
 
 # Features
@@ -18,6 +21,9 @@ A mod for Plants vs. Zombies 1 that restores the original experience by removing
 - Various other annoying features from the latest free version aren't present here 
 
 ## Why Pokey's PvZ?
+
+![Background3](https://github.com/user-attachments/assets/75451068-5253-4173-aa24-a02f756ea835)
+
 
 When EA acquired PopCap, they pushed changes that were not well received by fans, started becoming more greedy and later delisted the paid version, forcing everybody to use their buggy, ad-riddled joke of a version with horrible features. My mod fixes all of these and grants you the PvZ 1 experience you deserve.
 
